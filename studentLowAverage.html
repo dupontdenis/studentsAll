@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students with Low Average Marks</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script type="module">
+    import students from './students.mjs';
+    import { filterLowAverageStudents } from './lowMarks.mjs';
+    import { generateTableHTML } from './renderTable.mjs';
+
+    const studentsWithLowAverage = filterLowAverageStudents(students);
+    console.log(studentsWithLowAverage);
+    document.getElementById('student-table').innerHTML = generateTableHTML(studentsWithLowAverage);
+  </script>
+</head>
+
+<body>
+  <div class="mt-4">
+    <a href="index.html" class="btn btn-primary">Back to Index</a>
+  </div>
+  <h1 class="text-center mt-5">Students with Low Average Marks</h1>
+  <div class="container mt-5">
+    <section id="student-table">
+      <!-- Student rows will be inserted here -->
+    </section>
+  </div>
+</body>
+
+</html>
